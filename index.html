@@ -1,98 +1,422 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TankFlow - Terms of Service / Hizmet Şartları</title>
+  <title>TankFlow – Terms of Service / Hizmet Şartları</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.15);
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.65;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
       margin: 0;
       padding: 24px 16px;
     }
     .container {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      background: #1e293b;
-      padding: 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     }
-    h1 { color: #fb923c; margin-top: 0; font-size: 1.8rem; }
-    h2 { color: #f8fafc; margin-top: 28px; font-size: 1.2rem; border-bottom: 1px solid #334155; padding-bottom: 6px; }
-    a { color: #fb923c; }
-    .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 24px; }
-    .divider { border: 0; border-top: 2px dashed #334155; margin: 40px 0; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
+    .lang-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-btn {
+      background: #0f172a;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 26px;
+      color: #fff;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding: 10px 14px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 17px;
+      color: var(--accent);
+      margin: 22px 0 8px 0;
+    }
+    p {
+      margin: 0 0 12px 0;
+      font-size: 15px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+    .footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 20px 16px; }
+      h1 { font-size: 22px; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>TankFlow – Terms of Service</h1>
-    <p class="meta">
-      <strong>Developer:</strong> MZF Digital &nbsp;|&nbsp;
-      <strong>Package:</strong> com.mzfdigital.tankflow &nbsp;|&nbsp;
-      <strong>Effective Date:</strong> November 19, 2026
-    </p>
+    <div class="lang-bar" role="tablist" aria-label="Language Selector">
+      <button class="lang-btn" data-lang="tr" onclick="setLang('tr')">TR Türkçe</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN English</button>
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE Deutsch</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR Français</button>
+      <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU Русский</button>
+      <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">AR العربية</button>
+      <button class="lang-btn" data-lang="ur" onclick="setLang('ur')">UR اردو</button>
+      <button class="lang-btn" data-lang="id" onclick="setLang('id')">ID Bahasa</button>
+    </div>
 
-    <p>By downloading or using the <strong>TankFlow</strong> mobile application, you agree to these Terms of Service. If you do not agree with these terms, please do not use the application.</p>
+    <!-- TÜRKÇE -->
+    <section id="lang-tr" class="lang-section" lang="tr" dir="ltr">
+      <h1>TankFlow – Hizmet Şartları</h1>
+      <div class="meta">Geliştirici: MZF Digital &nbsp;|&nbsp; Paket: com.mzfdigital.tankflow &nbsp;|&nbsp; Yürürlük Tarihi: 24 Kasım 2026</div>
+      <p>TankFlow mobil uygulamasını indirerek, kurarak veya kullanarak aşağıdaki Hizmet Şartları'nı peşinen kabul etmiş sayılırsınız. Bu şartların tamamını kabul etmiyorsanız lütfen uygulamayı kullanmayınız ve cihazınızdan kaldırınız.</p>
 
-    <h2>1. Description of Service</h2>
-    <p>TankFlow is a personal vehicle utility application designed to help users log fuel refills, track mileage, estimate fuel consumption, and calculate trip costs. The app is provided on an "as-is" and "as-available" basis.</p>
+      <h2>1. Hizmetin Kapsamı ve "Olduğu Gibi" Sunum</h2>
+      <p>TankFlow; bireysel araç sahiplerinin yakıt veya elektrik şarj dolumlarını kaydetmesine, kilometre, ortalama tüketim ve harcama istatistiklerini takip etmesine ve tahmini rota maliyeti hesaplamasına yardımcı olan kişisel bir yardımcı yazılımdır. Uygulama "olduğu gibi" (as-is) ve "mevcut haliyle" sunulmakta olup kesintisiz, hatasız veya belirli bir amaca mutlak uygunluk garantisi verilmez.</p>
 
-    <h2>2. Accuracy of Calculations &amp; Disclaimer</h2>
-    <p>All consumption figures, cost-per-kilometer values, and range estimations are calculated strictly based on the data you enter. TankFlow does not replace your vehicle's built-in fuel gauge or manufacturer guidelines. MZF Digital is not liable for running out of fuel, financial miscalculations, or any vehicle-related damages resulting from reliance on app estimates.</p>
+      <h2>2. Sürüş Güvenliği ve Trafik Kuralları</h2>
+      <p>Uygulama hiçbir koşulda araç hareket halindeyken veya sürüş güvenliğini tehlikeye atacak şekilde kullanılmamalıdır. Veri girişi yalnızca araç güvenli bir şekilde park edildikten sonra yapılmalıdır. Kullanıcı, bulunduğu ülkenin trafik mevzuatına uymaktan bizzat sorumludur; uygulamanın seyir halinde kullanımından doğabilecek trafik cezaları, kazalar, maddi veya bedensel zararlardan MZF Digital hiçbir şekilde sorumlu tutulamaz.</p>
 
-    <h2>3. Local Data Storage &amp; Backups</h2>
-    <p>All records and receipt photos are stored locally on your device. You are solely responsible for creating backups using the app's export features (JSON, CSV, PDF). MZF Digital cannot recover lost data resulting from app uninstallation, device damage, loss, or factory resets.</p>
+      <h2>3. Hesaplamaların Doğruluğu, LPG Güvenliği ve Teknik Sorumluluk Reddi</h2>
+      <p>Uygulamada gösterilen ortalama tüketim (L/100km, kWh/100km), kilometre başı maliyet, tahmini menzil ve LPG %80 dolum sınırı uyarıları yalnızca kullanıcının girdiği verilere ve genel matematiksel formüllere dayanan bilgilendirme amaçlı tahminlerdir. TankFlow, aracınızın kendi yakıt göstergesinin, araç üreticisi kullanım kılavuzunun veya yetkili akaryakıt/LPG istasyonu güvenlik kurallarının yerine geçmez. Uygulamadaki tahminlere dayanılarak yaşanabilecek yakıt bitmesi, yolda kalma, LPG/yakıt tankı veya motor arızaları, yanlış dolum ya da mali sapmalardan MZF Digital sorumlu değildir.</p>
 
-    <h2>4. Advertisements &amp; In-App Purchases</h2>
-    <p>TankFlow is free to download and is supported by third-party advertisements (Google AdMob). Optional paid features, such as ad removal (PRO version), may be offered through Google Play Billing. All purchases, subscriptions, and refund requests are governed by Google Play's Terms of Service and refund policies.</p>
+      <h2>4. Dışa Aktarılan Raporların Resmi Geçerliliği</h2>
+      <p>Uygulama üzerinden oluşturulan PDF, CSV ve JSON dosyaları yalnızca kişisel takip ve arşivleme amaçlıdır. Bu çıktılar resmi fatura, vergi beyannamesi, muhasebe belgesi, hukuki delil veya araç ekspertiz raporu niteliği taşımaz; resmi veya ticari işlemlerinizde kullanılmasından doğabilecek sonuçlardan geliştirici sorumlu tutulamaz.</p>
 
-    <h2>5. Intellectual Property</h2>
-    <p>All design elements, graphics, code, and branding associated with TankFlow are the intellectual property of MZF Digital. You may not copy, modify, reverse-engineer, or redistribute the application without prior written permission.</p>
+      <h2>5. Yerel Veri Saklama ve Yedekleme Sorumluluğu</h2>
+      <p>Tüm araç bilgileri, yakıt kayıtları ve fiş fotoğrafları yalnızca cihazınızın yerel hafızasında saklanır; MZF Digital sunucularına aktarılmaz. Verilerinizi uygulamadaki dışa aktarma (JSON, CSV, PDF) araçlarıyla düzenli olarak yedeklemek tamamen kullanıcının sorumluluğundadır. Uygulamanın silinmesi, cihaz arızası, işletim sistemi güncellemesi, kayıp veya fabrika ayarlarına sıfırlama sonucu oluşan veri kayıplarından MZF Digital sorumlu değildir ve kaybolan veriler kurtarılamaz.</p>
 
-    <h2>6. Changes to These Terms</h2>
-    <p>MZF Digital reserves the right to update these Terms of Service at any time. Continued use of the app after changes are published constitutes acceptance of the revised terms.</p>
+      <h2>6. Reklamlar ve Uygulama İçi Abonelikler (TankFlow Pro)</h2>
+      <p>TankFlow ücretsiz olarak sunulur ve üçüncü taraf reklamlarla (Google AdMob) desteklenir; bazı özellikler (örneğin rapor dışa aktarma) isteğe bağlı ödüllü reklam izlenerek açılabilir. Reklamların kaldırılması ve ek kolaylıklar için sunulan aylık veya yıllık TankFlow Pro abonelikleri tamamen Google Play Faturalandırma (Google Play Billing) sistemi üzerinden yönetilir. Otomatik yenileme, abonelik iptali, fiyat değişiklikleri ve iade talepleri Google Play Hizmet Şartları ve iade politikalarına tabidir; abonelikler Google Play hesap ayarlarından yenileme tarihinden önce istenildiği zaman iptal edilebilir.</p>
 
-    <h2>7. Contact</h2>
-    <p>For questions or support regarding these terms, please contact: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+      <h2>7. Sorumluluğun Azami Ölçüde Sınırlandırılması</h2>
+      <p>Uygulanabilir hukukun ve emredici tüketici mevzuatının izin verdiği azami ölçüde; MZF Digital, uygulamanın kullanımından veya kullanılamamasından kaynaklanan doğrudan, dolaylı, arızi, özel veya sonuçsal hiçbir zarardan (veri kaybı, kâr kaybı, araç hasarı, trafik cezası, üçüncü taraf reklam içerikleri veya kesintiler dahil) sorumlu tutulamaz.</p>
 
-    <hr class="divider" />
+      <h2>8. Fikri Mülkiyet ve Şartlarda Değişiklik</h2>
+      <p>TankFlow uygulamasının tüm tasarım, arayüz, kaynak kodu, görsel ve marka hakları MZF Digital'e aittir; izinsiz kopyalanması, tersine mühendislik yapılması veya ticari amaçla dağıtılması yasaktır. MZF Digital bu Hizmet Şartları'nı önceden bildirimde bulunmaksızın güncelleme hakkını saklı tutar; güncel metin yayınlandığı tarihten itibaren geçerli olur.</p>
 
-    <h1>TankFlow – Hizmet Şartları</h1>
-    <p class="meta">
-      <strong>Geliştirici:</strong> MZF Digital &nbsp;|&nbsp;
-      <strong>Paket Adı:</strong> com.mzfdigital.tankflow &nbsp;|&nbsp;
-      <strong>Yürürlük Tarihi:</strong> 19 Kasım 2026
-    </p>
+      <h2>9. Uygulanacak Hukuk, Yetkili Mahkeme ve İletişim</h2>
+      <p>İşbu Hizmet Şartları, kullanıcının ikamet ettiği ülkedeki zorunlu tüketici koruma hükümleri saklı kalmak kaydıyla, Türkiye Cumhuriyeti kanunlarına tabidir. Doğabilecek uyuşmazlıklarda Ankara (Türkiye) Mahkemeleri ve İcra Daireleri yetkilidir. Sorularınız ve destek talepleriniz için: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
 
-    <p><strong>TankFlow</strong> mobil uygulamasını indirerek veya kullanarak aşağıdaki Hizmet Şartları'nı kabul etmiş sayılırsınız. Bu şartları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.</p>
+    <!-- ENGLISH -->
+    <section id="lang-en" class="lang-section" lang="en" dir="ltr">
+      <h1>TankFlow – Terms of Service</h1>
+      <div class="meta">Developer: MZF Digital &nbsp;|&nbsp; Package: com.mzfdigital.tankflow &nbsp;|&nbsp; Effective Date: November 24, 2026</div>
+      <p>By downloading, installing, or using the TankFlow mobile application, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use the application and uninstall it from your device.</p>
 
-    <h2>1. Hizmetin Kapsamı</h2>
-    <p>TankFlow; araç sahiplerinin yakıt dolumlarını kaydetmesine, kilometre ve ortalama tüketim takibi yapmasına ve rota maliyeti hesaplamasına yardımcı olan kişisel bir araç takip uygulamasıdır. Uygulama "olduğu gibi" sunulmaktadır.</p>
+      <h2>1. Description of Service & "As-Is" Provision</h2>
+      <p>TankFlow is a personal vehicle utility application designed to help users log fuel or EV charging refills, track odometer readings and consumption statistics, and estimate trip costs. The app is provided strictly on an "as-is" and "as-available" basis without warranties of any kind, whether express or implied.</p>
 
-    <h2>2. Hesaplamaların Doğruluğu ve Sorumluluk Reddi</h2>
-    <p>Uygulamada gösterilen ortalama tüketim, kilometre başı maliyet ve tahmini menzil değerleri yalnızca kullanıcının girdiği verilere dayanır. TankFlow, aracınızın kendi yakıt göstergesinin veya üretici tavsiyelerinin yerine geçmez. Tahmini verilere dayanılarak yaşanabilecek yakıt bitmesi, maddi hesaplama farkları veya araç kaynaklı sorunlardan MZF Digital sorumlu tutulamaz.</p>
+      <h2>2. Driving Safety & Traffic Laws</h2>
+      <p>You must never operate the application while driving or in any manner that compromises road safety. All data entry must be performed only when the vehicle is safely parked. You are solely responsible for complying with applicable traffic laws. MZF Digital bears no liability for any traffic fines, accidents, injuries, or damages arising from using the app while driving.</p>
 
-    <h2>3. Yerel Veri ve Yedekleme Sorumluluğu</h2>
-    <p>Tüm yakıt kayıtları ve fiş fotoğrafları yalnızca cihazınızın yerel hafızasında saklanır. Verilerinizi uygulamadaki dışa aktarma (JSON, CSV, PDF) seçenekleriyle yedeklemek sizin sorumluluğunuzdadır. Uygulamanın silinmesi, cihaz arızası veya sıfırlanması durumunda kaybolan veriler MZF Digital tarafından kurtarılamaz.</p>
+      <h2>3. Accuracy of Calculations, LPG Safety & Technical Disclaimer</h2>
+      <p>All consumption metrics (L/100km, kWh/100km), cost-per-kilometer figures, range estimates, and LPG 80% safety fill limit reminders are informational estimates based solely on user-entered data and standard formulas. TankFlow does not replace your vehicle's fuel gauge, manufacturer manual, or official fuel/LPG station safety procedures. MZF Digital is not liable for running out of fuel, mechanical or tank issues, refueling errors, or financial discrepancies resulting from reliance on app estimates.</p>
 
-    <h2>4. Reklamlar ve Uygulama İçi Satın Almalar</h2>
-    <p>TankFlow ücretsizdir ve üçüncü taraf reklamlar (Google AdMob) ile desteklenir. Reklamların kaldırılması (PRO sürüm) gibi isteğe bağlı ücretli özellikler Google Play Faturalandırma sistemi üzerinden sunulabilir. Tüm ödeme ve iade süreçleri Google Play Hizmet Şartları ve iade politikalarına tabidir.</p>
+      <h2>4. Non-Official Nature of Exported Reports</h2>
+      <p>PDF, CSV, and JSON files exported from TankFlow are intended strictly for personal tracking and archiving. They do not constitute official invoices, tax filings, accounting records, legal evidence, or vehicle inspection documents. MZF Digital accepts no liability for any official, tax, or commercial use of these reports.</p>
 
-    <h2>5. Fikri Mülkiyet</h2>
-    <p>TankFlow uygulamasının tüm tasarım, arayüz, kod ve marka hakları MZF Digital'e aittir. İzinsiz kopyalanması, tersine mühendislik yapılması veya ticari amaçla yeniden dağıtılması yasaktır.</p>
+      <h2>5. Local Data Storage & Backup Responsibility</h2>
+      <p>All vehicle profiles, fuel logs, and receipt photos are stored exclusively on your device's local storage and are not uploaded to MZF Digital servers. You are solely responsible for backing up your data using the app's export features (JSON, CSV, PDF). MZF Digital is not liable for data loss caused by app uninstallation, device failure, OS updates, loss, or factory resets, and cannot recover lost data.</p>
 
-    <h2>6. Şartlarda Değişiklik</h2>
-    <p>MZF Digital bu Hizmet Şartları'nı önceden bildirimde bulunmaksızın güncelleme hakkını saklı tutar. Güncel metin her zaman bu sayfada yayınlanır.</p>
+      <h2>6. Advertisements & In-App Subscriptions (TankFlow Pro)</h2>
+      <p>TankFlow is free to download and is supported by third-party advertisements (Google AdMob); certain features (such as report exports) may be unlocked via optional rewarded ads. Optional monthly or yearly TankFlow Pro subscriptions (ad-free experience) are processed exclusively through Google Play Billing. Auto-renewal, cancellation, pricing, and refund requests are governed solely by Google Play's Terms of Service and refund policies. Subscriptions can be canceled anytime via Google Play account settings before renewal.</p>
 
-    <h2>7. İletişim</h2>
-    <p>Hizmet şartlarıyla ilgili her türlü soru ve destek talebi için bize ulaşabilirsiniz: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+      <h2>7. Maximum Limitation of Liability</h2>
+      <p>To the fullest extent permitted by applicable law and mandatory consumer protection statutes, MZF Digital shall not be liable for any direct, indirect, incidental, special, or consequential damages—including data loss, financial loss, vehicle damage, traffic penalties, third-party ad content, or service interruptions—arising out of your use of or inability to use the application.</p>
+
+      <h2>8. Intellectual Property & Changes</h2>
+      <p>All code, UI design, graphics, and branding of TankFlow are the intellectual property of MZF Digital. Unauthorized copying, reverse-engineering, or commercial redistribution is prohibited. MZF Digital reserves the right to modify these Terms at any time; continued use after updates constitutes acceptance.</p>
+
+      <h2>9. Governing Law, Jurisdiction & Contact</h2>
+      <p>Subject to mandatory consumer rights in your jurisdiction, these Terms are governed by the laws of the Republic of Türkiye, and the courts of Ankara, Türkiye shall have exclusive jurisdiction. Contact: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- DEUTSCH -->
+    <section id="lang-de" class="lang-section" lang="de" dir="ltr">
+      <h1>TankFlow – Nutzungsbedingungen</h1>
+      <div class="meta">Entwickler: MZF Digital &nbsp;|&nbsp; Paket: com.mzfdigital.tankflow &nbsp;|&nbsp; Gültig ab: 24. November 2026</div>
+      <p>Durch das Herunterladen, Installieren oder Verwenden der mobilen Anwendung TankFlow erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie nicht zustimmen, nutzen Sie die App bitte nicht.</p>
+
+      <h2>1. Leistungsbeschreibung ("Wie besehen")</h2>
+      <p>TankFlow ist eine persönliche Fahrzeug-App zur Erfassung von Kraftstoff- und Ladevorgängen, Kilometerständen, Verbrauchsstatistiken und geschätzten Fahrtkosten. Die App wird ohne ausdrückliche oder stillschweigende Gewährleistung „wie besehen“ (as-is) bereitgestellt.</p>
+
+      <h2>2. Fahrsicherheit und Verkehrsregeln</h2>
+      <p>Die App darf niemals während der Fahrt oder in einer die Verkehrssicherheit gefährdenden Weise bedient werden. Eingaben dürfen nur im sicher geparkten Fahrzeug erfolgen. MZF Digital übernimmt keinerlei Haftung für Bußgelder, Verkehrsverstöße, Unfälle oder Schäden infolge unsachgemäßer Nutzung.</p>
+
+      <h2>3. Genauigkeit der Berechnungen &amp; LPG-Sicherheitshinweis</h2>
+      <p>Alle Verbrauchs-, Kosten- und Reichweitenangaben sowie Hinweise zur 80%-Füllgrenze bei LPG-Tanks sind rein unverbindliche Schätzungen auf Basis Ihrer Eingaben. TankFlow ersetzt weder die Tankanzeige Ihres Fahrzeugs noch Herstellervorgaben oder Sicherheitsvorschriften an Tankstellen. Für Liegenbleiben, Fahrzeugschäden oder Rechenabweichungen wird keine Haftung übernommen.</p>
+
+      <h2>4. Keine amtliche Gültigkeit von Exporten</h2>
+      <p>Exportierte PDF-, CSV- und JSON-Berichte dienen ausschließlich der privaten Dokumentation und stellen keine steuerlichen Belege, Rechnungen oder amtlichen Gutachten dar.</p>
+
+      <h2>5. Lokale Datenspeicherung und Datensicherung</h2>
+      <p>Alle Daten und Belegfotos werden ausschließlich lokal auf Ihrem Gerät gespeichert. Für regelmäßige Backups über die Exportfunktionen sind Sie selbst verantwortlich. Bei Datenverlust durch Deinstallation, Gerätefehler oder Zurücksetzen besteht kein Anspruch auf Wiederherstellung oder Schadensersatz.</p>
+
+      <h2>6. Werbung und Abonnements (TankFlow Pro)</h2>
+      <p>Die kostenlose Version wird über Google AdMob finanziert (inkl. optionaler Prämienanzeigen für Berichte). Optionale monatliche oder jährliche TankFlow Pro-Abonnements werden ausschließlich über Google Play Billing abgewickelt. Verlängerung, Kündigung und Rückerstattungen unterliegen den Bedingungen von Google Play.</p>
+
+      <h2>7. Haftungsbeschränkung</h2>
+      <p>Soweit nach geltendem Recht zulässig, haftet MZF Digital nicht für direkte, indirekte, zufällige oder Folgeschäden (einschließlich Datenverlust, Vermögensschäden, Fahrzeugschäden oder Bußgelder), die aus der Nutzung oder Nichtverfügbarkeit der App entstehen.</p>
+
+      <h2>8. Geistiges Eigentum und Änderungen</h2>
+      <p>Alle Rechte an Design, Code und Marke liegen bei MZF Digital. Kopieren, Dekompilieren oder unbefugte Weitergabe sind untersagt. MZF Digital kann diese Bedingungen jederzeit aktualisieren.</p>
+
+      <h2>9. Anwendbares Recht, Gerichtsstand und Kontakt</h2>
+      <p>Vorbehaltlich zwingender Verbraucherschutzgesetze gilt das Recht der Republik Türkei; Gerichtsstand ist Ankara, Türkei. Kontakt: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- FRANÇAIS -->
+    <section id="lang-fr" class="lang-section" lang="fr" dir="ltr">
+      <h1>TankFlow – Conditions d'Utilisation</h1>
+      <div class="meta">Développeur : MZF Digital &nbsp;|&nbsp; Package : com.mzfdigital.tankflow &nbsp;|&nbsp; Date d'effet : 24 novembre 2026</div>
+      <p>En téléchargeant ou en utilisant l'application mobile TankFlow, vous acceptez pleinement les présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord, veuillez ne pas utiliser l'application.</p>
+
+      <h2>1. Description du service (En l'état)</h2>
+      <p>TankFlow est une application personnelle permettant d'enregistrer les pleins de carburant ou recharges électriques, de suivre le kilométrage, la consommation et d'estimer les coûts de trajet. Elle est fournie « en l'état » (as-is) sans aucune garantie.</p>
+
+      <h2>2. Sécurité routière et Code de la route</h2>
+      <p>L'application ne doit jamais être utilisée en conduisant. Toute saisie doit être effectuée lorsque le véhicule est garé en sécurité. MZF Digital décline toute responsabilité en cas d'amendes, d'infractions au code de la route, d'accidents ou de dommages.</p>
+
+      <h2>3. Précision des calculs et Sécurité GPL</h2>
+      <p>Les estimations de consommation, de coût au km, d'autonomie et les rappels relatifs à la limite de remplissage GPL à 80 % sont fournis à titre purement indicatif d'après vos saisies. TankFlow ne remplace ni la jauge de votre véhicule ni les consignes du constructeur. MZF Digital n'est pas responsable des pannes sèches, dommages mécaniques ou écarts financiers.</p>
+
+      <h2>4. Valeur non officielle des rapports</h2>
+      <p>Les fichiers PDF, CSV et JSON exportés servent uniquement à un suivi personnel et ne constituent ni des factures, ni des justificatifs fiscaux, comptables ou juridiques.</p>
+
+      <h2>5. Stockage local et Sauvegardes</h2>
+      <p>Toutes les données et photos de reçus sont stockées localement sur votre appareil. Vous êtes seul responsable de vos sauvegardes via les fonctions d'exportation. MZF Digital ne peut récupérer aucune donnée perdue suite à une désinstallation, une panne ou une réinitialisation.</p>
+
+      <h2>6. Publicités et Abonnements (TankFlow Pro)</h2>
+      <p>La version gratuite est financée par Google AdMob (incluant des annonces récompensées optionnelles). Les abonnements mensuels ou annuels TankFlow Pro sont gérés exclusivement via Google Play Billing. Les renouvellements, résiliations et remboursements sont régis par les conditions de Google Play.</p>
+
+      <h2>7. Limitation de responsabilité</h2>
+      <p>Dans toute la mesure permise par la loi applicable, MZF Digital ne pourra être tenu responsable de tout dommage direct, indirect, accessoire ou consécutif résultant de l'utilisation ou de l'impossibilité d'utiliser l'application.</p>
+
+      <h2>8. Propriété intellectuelle et Modifications</h2>
+      <p>Tous les droits de design, code et marque appartiennent à MZF Digital. Toute copie ou rétro-ingénierie sans autorisation est interdite. MZF Digital peut modifier ces conditions à tout moment.</p>
+
+      <h2>9. Droit applicable, Juridiction et Contact</h2>
+      <p>Sous réserve des dispositions impératives de protection des consommateurs, les présentes conditions sont régies par le droit de la République de Turquie (tribunaux compétents : Ankara, Turquie). Contact : <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- РУССКИЙ -->
+    <section id="lang-ru" class="lang-section" lang="ru" dir="ltr">
+      <h1>TankFlow – Условия использования</h1>
+      <div class="meta">Разработчик: MZF Digital &nbsp;|&nbsp; Пакет: com.mzfdigital.tankflow &nbsp;|&nbsp; Дата вступления в силу: 24 ноября 2026 г.</div>
+      <p>Скачивая, устанавливая или используя мобильное приложение TankFlow, вы соглашаетесь с настоящими Условиями использования. Если вы не согласны с ними, пожалуйста, не используйте приложение.</p>
+
+      <h2>1. Описание сервиса («Как есть»)</h2>
+      <p>TankFlow — персональное приложение для учета заправок топливом и зарядок электромобилей, отслеживания пробега, статистики расхода и расчета стоимости поездок. Приложение предоставляется на условиях «как есть» (as-is) без каких-либо гарантий.</p>
+
+      <h2>2. Безопасность вождения и ПДД</h2>
+      <p>Запрещается использовать приложение во время управления автомобилем. Ввод данных допускается только на безопасно припаркованном автомобиле. MZF Digital не несет ответственности за штрафы ГИБДД/дорожные штрафы, ДТП или любой ущерб, вызванный использованием приложения за рулем.</p>
+
+      <h2>3. Точность расчетов и Безопасность ГБО (LPG)</h2>
+      <p>Все расчеты расхода, стоимости километра, запаса хода и напоминания о лимите заправки газового баллона (80%) носят исключительно справочный характер и зависят от введенных вами данных. TankFlow не заменяет штатные приборы автомобиля и инструкции производителя. Разработчик не несет ответственности за пустой бак, поломки автомобиля или финансовые расхождения.</p>
+
+      <h2>4. Неофициальный статус отчетов</h2>
+      <p>Экспортируемые файлы PDF, CSV и JSON предназначены только для личного учета и не являются официальными чеками, налоговыми, бухгалтерскими или юридическими документами.</p>
+
+      <h2>5. Локальное хранение данных и резервные копии</h2>
+      <p>Все записи и фото чеков хранятся исключительно на вашем устройстве. Вы самостоятельно несете ответственность за создание резервных копий (JSON, CSV, PDF). При удалении приложения, поломке или сбросе устройства MZF Digital не может восстановить утраченные данные и не несет за это ответственности.</p>
+
+      <h2>6. Реклама и подписки (TankFlow Pro)</h2>
+      <p>Бесплатная версия поддерживается рекламой Google AdMob (включая добровольный просмотр рекламы с вознаграждением). Ежемесячные и годовые подписки TankFlow Pro оформляются и управляются исключительно через Google Play Billing. Автопродление, отмена и возврат средств регулируются правилами Google Play.</p>
+
+      <h2>7. Ограничение ответственности</h2>
+      <p>В максимальной степени, допускаемой применимым законодательством, MZF Digital не несет ответственности за любые прямые, косвенные, случайные или последующие убытки (включая потерю данных, штрафы, повреждение автомобиля или перебои в работе), связанные с использованием приложения.</p>
+
+      <h2>8. Интеллектуальная собственность и изменения</h2>
+      <p>Все права на код, дизайн и бренд принадлежат MZF Digital. Копирование и обратная разработка без разрешения запрещены. MZF Digital вправе обновлять настоящие Условия в любое время.</p>
+
+      <h2>9. Применимое право и контакты</h2>
+      <p>С учетом обязательных норм защиты прав потребителей применяются законы Турецкой Республики; споры подлежат рассмотрению в судах г. Анкара (Турция). Контакты: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- العربية -->
+    <section id="lang-ar" class="lang-section" lang="ar" dir="rtl">
+      <h1>TankFlow – شروط الخدمة</h1>
+      <div class="meta">المطور: MZF Digital &nbsp;|&nbsp; المعرف: com.mzfdigital.tankflow &nbsp;|&nbsp; تاريخ السريان: 24 نوفمبر 2026</div>
+      <p>بتنزيل تطبيق TankFlow أو تثبيته أو استخدامه، فإنك توافق على الالتزام بشروط الخدمة هذه. إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى عدم استخدام التطبيق وإزالته من جهازك.</p>
+
+      <h2>1. وصف الخدمة وتقديمها "كما هي"</h2>
+      <p>TankFlow هو تطبيق شخصي لمساعدة مالكي المركبات على تسجيل عمليات تعبئة الوقود أو الشحن الكهربائي، ومتابعة المسافة المقطوعة ومعدل الاستهلاك وتقدير تكلفة الرحلات. يُقدَّم التطبيق "كما هو" (As-Is) دون أي ضمانات صريحة أو ضمنية.</p>
+
+      <h2>2. السلامة المرورية وقوانين السير</h2>
+      <p>يُمنع استخدام التطبيق نهائياً أثناء القيادة أو بأي شكل يهدد السلامة المرورية. يجب إدخال البيانات فقط عند إيقاف السيارة في مكان آمن. لا تتحمل MZF Digital أي مسؤولية عن المخالفات المرورية أو الغرامات أو الحوادث أو أي أضرار ناتجة عن استخدام التطبيق أثناء القيادة.</p>
+
+      <h2>3. دقة الحسابات وسلامة غاز البترول المسال (LPG)</h2>
+      <p>جميع معدلات الاستهلاك، والتكلفة لكل كيلومتر، وتقديرات المدى، وتنبيهات حد التعبئة الآمن لخزانات الغاز (80%) هي تقديرات إرشادية تعتمد كلياً على البيانات التي يدخلها المستخدم. لا يغني التطبيق عن عداد الوقود الأصلي في سيارتك أو إرشادات الشركة المصنّعة. لا تتحمل MZF Digital أي مسؤولية عن نفاد الوقود أو الأعطال الميكانيكية أو الفروقات المالية.</p>
+
+      <h2>4. عدم رسمية التقارير المُصدَّرة</h2>
+      <p>ملفات PDF وCSV وJSON المُصدَّرة مخصصة للاستخدام الشخصي والأرشفة فقط، ولا تُعد فواتير رسمية أو مستندات ضريبية أو محاسبية أو قانونية.</p>
+
+      <h2>5. التخزين المحلي والنسخ الاحتياطي</h2>
+      <p>تُخزَّن جميع السجلات وصور الإيصالات محلياً على جهازك فقط. تقع مسؤولية إنشاء نسخ احتياطية بانتظام على عاتق المستخدم وحده. لا تتحمل MZF Digital أي مسؤولية عن فقدان البيانات نتيجة حذف التطبيق أو تلف الجهاز أو إعادة ضبط المصنع.</p>
+
+      <h2>6. الإعلانات والاشتراكات (TankFlow Pro)</h2>
+      <p>التطبيق مجاني ومدعوم بإعلانات Google AdMob (بما في ذلك الإعلانات بمكافأة اختيارياً لتصدير التقارير). تتم إدارة اشتراكات TankFlow Pro الشهرية والسنوية حصرياً عبر نظام فوترة Google Play. تخضع عمليات التجديد التلقائي والإلغاء والاسترداد لسياسات Google Play.</p>
+
+      <h2>7. حدود المسؤولية القصوى</h2>
+      <p>إلى أقصى حد يسمح به القانون المعمول به، لا تتحمل MZF Digital أي مسؤولية عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو تبعية (بما في ذلك فقدان البيانات أو الغرامات أو تلف المركبة) ناتجة عن استخدام التطبيق أو عدم القدرة على استخدامه.</p>
+
+      <h2>8. الملكية الفكرية والتعديلات</h2>
+      <p>تعود جميع حقوق التصميم والبرمجة والعلامة التجارية إلى MZF Digital. يُحظر النسخ أو الهندسة العكسية دون إذن خطي مسبق. تحتفظ MZF Digital بحق تحديث هذه الشروط في أي وقت.</p>
+
+      <h2>9. القانون الواجب التطبيق والتواصل</h2>
+      <p>مع مراعاة حقوق المستهلك الإلزامية في بلدك، تخضع هذه الشروط لقوانين الجمهورية التركية، وتختص محاكم أنقرة (تركيا) بالنظر في أي نزاع. للتواصل: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- اردو -->
+    <section id="lang-ur" class="lang-section" lang="ur" dir="rtl">
+      <h1>TankFlow – شرائطِ خدمت</h1>
+      <div class="meta">ڈویلپر: MZF Digital &nbsp;|&nbsp; پیکیج: com.mzfdigital.tankflow &nbsp;|&nbsp; نفاذ کی تاریخ: 24 نومبر 2026</div>
+      <p>TankFlow موبائل ایپ ڈاؤن لوڈ، انسٹال یا استعمال کر کے آپ ان شرائطِ خدمت سے اتفاق کرتے ہیں۔ اگر آپ ان شرائط سے متفق نہیں ہیں تو براہِ کرم ایپ استعمال نہ کریں اور اسے اپنے آلے سے ہٹا دیں۔</p>
+
+      <h2>1. سروس کی تفصیل ("جیسا ہے")</h2>
+      <p>TankFlow ایک ذاتی ایپ ہے جو صارفین کو ایندھن یا الیکٹرک چارجنگ کا ریکارڈ رکھنے، مائلیج اور اوسط کھپت دیکھنے اور سفر کے اخراجات کا اندازہ لگانے میں مدد دیتی ہے۔ یہ ایپ بغیر کسی ضمانت کے "جیسی ہے" (As-Is) کی بنیاد پر فراہم کی جاتی ہے۔</p>
+
+      <h2>2. ڈرائیونگ سیفٹی اور ٹریفک قوانین</h2>
+      <p>گاڑی چلاتے وقت ایپ کا استعمال ہرگز نہ کریں۔ ڈیٹا کا اندراج صرف گاڑی محفوظ طریقے سے پارک کرنے کے بعد کریں۔ ٹریفک قوانین کی پابندی صارف کی اپنی ذمہ داری ہے؛ ڈرائیونگ کے دوران ایپ کے استعمال سے ہونے والے کسی بھی جرمانے، حادثے یا نقصان کی ذمہ داری MZF Digital پر عائد نہیں ہوگی۔</p>
+
+      <h2>3. حساب کتاب کی درستگی اور LPG سیفٹی</h2>
+      <p>ایندھن کی اوسط، فی کلومیٹر لاگت، اندازاً رینج اور LPG ٹینک کی 80% حفاظتی حد کی تنبیہات محض صارف کے درج کردہ ڈیٹا پر مبنی تخمینے ہیں۔ TankFlow آپ کی گاڑی کے اصل فیول گیج یا کمپنی کی ہدایات کا متبادل نہیں ہے۔ ایندھن ختم ہونے، گاڑی کی خرابی یا مالی فرق کی صورت میں MZF Digital ذمہ دار نہیں ہوگا۔</p>
+
+      <h2>4. برآمد شدہ رپورٹس کی غیر سرکاری حیثیت</h2>
+      <p>ایپ سے بنائی گئی PDF، CSV اور JSON فائلیں صرف ذاتی ریکارڈ کے لیے ہیں اور یہ سرکاری رسید، ٹیکس، اکاؤنٹنگ یا قانونی دستاویز تصور نہیں کی جاتیں۔</p>
+
+      <h2>5. مقامی ڈیٹا اور بیک اپ کی ذمہ داری</h2>
+      <p>تمام ریکارڈز اور رسیدوں کی تصاویر صرف آپ کے فون کی میموری میں محفوظ ہوتی ہیں۔ باقاعدگی سے بیک اپ (JSON، CSV، PDF) بنانا صارف کی اپنی ذمہ داری ہے۔ ایپ ڈیلیٹ ہونے، فون خراب ہونے یا ری سیٹ ہونے پر ڈیٹا ضائع ہونے کی ذمہ داری MZF Digital پر نہیں ہوگی۔</p>
+
+      <h2>6. اشتہارات اور سبسکرپشن (TankFlow Pro)</h2>
+      <p>یہ ایپ مفت ہے اور Google AdMob اشتہارات کے ذریعے چلائی جاتی ہے (رپورٹس کے لیے اختیاری ریوارڈڈ اشتہارات سمیت)۔ ماہانہ یا سالانہ TankFlow Pro سبسکرپشنز مکمل طور پر Google Play Billing کے ذریعے منظم کی جاتی ہیں۔ تجدید، منسوخی اور ریفنڈ پر Google Play کی پالیسیاں لاگو ہوں گی۔</p>
+
+      <h2>7. ذمہ داری کی زیادہ سے زیادہ حد</h2>
+      <p>قابلِ اطلاق قانون کی اجازت کی انتہائی حد تک، MZF Digital ایپ کے استعمال یا عدم دستیابی سے پیدا ہونے والے کسی بھی براہِ راست، بالواسطہ یا حادثاتی نقصان (بشمول ڈیٹا کے ضیاع، جرمانے یا گاڑی کے نقصان) کا ذمہ دار نہیں ہوگا۔</p>
+
+      <h2>8. دانشورانہ ملکیت اور تبدیلیاں</h2>
+      <p>ایپ کے تمام ڈیزائن، کوڈ اور برانڈ کے حقوق MZF Digital کے پاس محفوظ ہیں۔ بغیر اجازت نقل یا ریورس انجینئرنگ ممنوع ہے۔ MZF Digital کسی بھی وقت ان شرائط میں ترمیم کر سکتا ہے۔</p>
+
+      <h2>9. قابلِ اطلاق قانون اور رابطہ</h2>
+      <p>لازمی صارف قوانین کو مدنظر رکھتے ہوئے، ان شرائط پر جمہوریہ ترکی کے قوانین لاگو ہوں گے اور انقرہ (ترکی) کی عدالتیں مجاز ہوں گی۔ رابطہ: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <!-- BAHASA INDONESIA -->
+    <section id="lang-id" class="lang-section" lang="id" dir="ltr">
+      <h1>TankFlow – Ketentuan Layanan</h1>
+      <div class="meta">Pengembang: MZF Digital &nbsp;|&nbsp; Paket: com.mzfdigital.tankflow &nbsp;|&nbsp; Tanggal Berlaku: 24 November 2026</div>
+      <p>Dengan mengunduh, memasang, atau menggunakan aplikasi seluler TankFlow, Anda menyetujui Ketentuan Layanan ini. Jika Anda tidak setuju, harap jangan gunakan aplikasi ini dan hapus dari perangkat Anda.</p>
+
+      <h2>1. Deskripsi Layanan ("Sebagaimana Adanya")</h2>
+      <p>TankFlow adalah aplikasi utilitas pribadi untuk mencatat pengisian bahan bakar atau daya EV, melacak jarak tempuh, statistik konsumsi, dan estimasi biaya perjalanan. Aplikasi ini disediakan "sebagaimana adanya" (as-is) tanpa jaminan apa pun.</p>
+
+      <h2>2. Keselamatan Berkendara &amp; Peraturan Lalu Lintas</h2>
+      <p>Jangan pernah mengoperasikan aplikasi saat mengemudi atau dalam kondisi yang membahayakan keselamatan di jalan. Pengisian data hanya boleh dilakukan saat kendaraan diparkir dengan aman. MZF Digital tidak bertanggung jawab atas tilang, denda lalu lintas, kecelakaan, atau kerugian akibat penggunaan saat berkendara.</p>
+
+      <h2>3. Akurasi Perhitungan &amp; Keamanan LPG</h2>
+      <p>Semua angka konsumsi, biaya per kilometer, estimasi jarak tempuh, serta pengingat batas pengisian aman LPG 80% hanyalah perkiraan informatif berdasarkan data yang Anda masukkan. TankFlow tidak menggantikan indikator bahan bakar kendaraan atau panduan pabrikan. MZF Digital tidak bertanggung jawab atas kehabisan bahan bakar, kerusakan mesin/tangki, atau selisih biaya.</p>
+
+      <h2>4. Sifat Non-Resmi dari Laporan Ekspor</h2>
+      <p>File PDF, CSV, dan JSON yang diekspor hanya ditujukan untuk pencatatan pribadi dan bukan merupakan faktur resmi, dokumen pajak, pembukuan resmi, atau bukti hukum.</p>
+
+      <h2>5. Penyimpanan Lokal &amp; Tanggung Jawab Cadangan</h2>
+      <p>Semua catatan dan foto struk disimpan secara lokal di perangkat Anda. Anda bertanggung jawab penuh membuat cadangan rutin melalui fitur ekspor (JSON, CSV, PDF). MZF Digital tidak bertanggung jawab atas kehilangan data akibat penghapusan aplikasi, kerusakan perangkat, atau reset pabrik.</p>
+
+      <h2>6. Iklan &amp; Langganan (TankFlow Pro)</h2>
+      <p>TankFlow gratis dan didukung iklan Google AdMob (termasuk iklan berhadiah opsional untuk laporan). Langganan bulanan atau tahunan TankFlow Pro dikelola sepenuhnya melalui Google Play Billing. Perpanjangan otomatis, pembatalan, dan pengembalian dana tunduk pada ketentuan Google Play.</p>
+
+      <h2>7. Pembatasan Tanggung Jawab Maksimal</h2>
+      <p>Sejauh diizinkan oleh hukum yang berlaku, MZF Digital tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, atau konsekuensial (termasuk kehilangan data, denda, atau kerusakan kendaraan) yang timbul dari penggunaan aplikasi.</p>
+
+      <h2>8. Hak Kekayaan Intelektual &amp; Perubahan</h2>
+      <p>Seluruh kode, desain, dan merek TankFlow adalah milik MZF Digital. Penyalinan atau rekayasa balik tanpa izin dilarang. MZF Digital berhak memperbarui ketentuan ini kapan saja.</p>
+
+      <h2>9. Hukum yang Berlaku &amp; Kontak</h2>
+      <p>Dengan tetap menghormati hak konsumen wajib setempat, Ketentuan ini diatur oleh hukum Republik Turki dengan yurisdiksi pengadilan di Ankara, Turki. Kontak: <a href="mailto:muzafferozdemir96@gmail.com">muzafferozdemir96@gmail.com</a></p>
+    </section>
+
+    <div class="footer">© 2026 MZF Digital — TankFlow (com.mzfdigital.tankflow)</div>
   </div>
+
+  <script>
+    const supported = ['tr', 'en', 'de', 'fr', 'ru', 'ar', 'ur', 'id'];
+    const rtlLangs = ['ar', 'ur'];
+
+    function setLang(lang) {
+      if (!supported.includes(lang)) lang = 'en';
+      document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById('lang-' + lang);
+      const btn = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
+    }
+
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = (params.get('lang') || '').toLowerCase().slice(0, 2);
+      const navLang = (navigator.language || 'en').toLowerCase().slice(0, 2);
+      const initial = supported.includes(urlLang) ? urlLang : (supported.includes(navLang) ? navLang : 'en');
+      setLang(initial);
+    })();
+  </script>
 </body>
 </html>
